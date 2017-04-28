@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ripleymatico</title>	
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+</head>
+<body>
+
+	<div class="contenedor">
+		<header>			
+			<div class="logo"><h1>Ripley<span class="logo_negrita">Mático</span></h1></div>	
+			<nav>
+				<ul>
+					<li class="menu_ripley"><a href="./"><img src="img/svg/casa.svg" class="svg-inject" alt="flechas" width="100" /></a></li>
+					<li class="menu_ripley"><a href="tasasytarifas.html">Tasas <br>y Tarifas</a></li>
+					<li class="menu_ripley"><a href="#">Red de Agencias</a></li>
+					<li class="menu_ripley"><a href="productos.html">Productos</a></li>
+					<li class="menu_ripley"><a href="#">Gift Card</a></li>
+					<li class="menu_ripley"><a href="#">Beneficios</a></li>
+					<li class="menu_ripley"><a href="#">Simulador</a></li>
+					<li id="pin" class="menu_ripley"><a href="#">Crear PIN</a></li>
+				</ul>
+				<div style="clear: both;"></div>				
+			</nav>		
+		</header>
+		<section>
+			<div class="main_content">				
+				<div class="pasa_tarjeta">
+					<div class="teclado">
+						<div class="titulos">
+							<h2>Tipo de documento</h2>
+							<p>Elije el documento que tengas y marca el número correspondiente.</p>
+							<div class="m17"></div>
+						</div>
+						<div>
+							<div class="documentos">							
+								<button id="bdni" class="btn botones_txt btn_active">DNI</button>
+								<button id="bcarnet" class="btn botones_txt btn_carnet btn_violeta">CARNET EXTRANJERIA</button>
+								<input id="indni" type="text" class="input_doc" name="documento_dni" value="">
+								<input style="display: none;" id="incarnet" type="text" class="input_doc" name="documento_carnet" value="">
+								<button type="reset" class="btn btn_end btn_terminar">Limpiar</button>
+								<button class="btn btn_end btn_go">Siguiente</button>
+							</div>
+							<div id="teclado_dni" class="numericos">
+								<div class="f_row">
+									<button class="btn btn-numerico insert_data" data="1">1</button>
+									<button class="btn btn-numerico insert_data" data="2">2</button>
+									<button class="btn btn-numerico insert_data" data="3">3</button>
+								</div>
+								<div class="f_row">
+									<button class="btn btn-numerico insert_data" data="4">4</button>
+									<button class="btn btn-numerico insert_data" data="5">5</button>
+									<button class="btn btn-numerico insert_data" data="6">6</button>
+								</div>
+								<div class="f_row">
+									<button class="btn btn-numerico insert_data" data="7">7</button>
+									<button class="btn btn-numerico insert_data" data="8">8</button>
+									<button class="btn btn-numerico insert_data" data="9">9</button>
+								</div>
+								<div class="f_row">
+									<button class="btn btn-cero insert_data" data="0">0</button>
+									<button class="btn btn-numerico btn_back" ><img src="img/svg/back2.svg" class="svg-inject" alt="flechas" width="30" height="30" /></button>
+
+								</div>										
+							</div>
+						</div>
+						<div style="clear: both;"></div>
+					</div>
+					<div class="desliza">
+						<div class="titulos">
+							<h2>Con Tarjeta</h2>
+							<p>Desliza tu tarjeta Ripley débito o crédito por la ranura que puedas ingresar.</p>
+						</div>
+						<div>							
+							<img src="img/ranura2-tarjeta.png" alt="Cargando Imagen..." class="ranura fondo_ranura" width="11.25">
+							<img src="img/tarjeta-ripley.png" alt="Cargando Imagen..." class="ranura tarjeta" width="140">
+							<img src="img/ranura1-tarjeta.png" alt="Cargando Imagen..." class="ranura" width="40">
+							<img src="img/flecha.png" alt="Cargando Imagen..." class="flecha">
+						</div>
+					</div>
+					
+				    <!--<img src="img/svg/flechas.svg" class="svg-inject" alt="flechas" width="100" />-->
+				</div>
+			</div>				
+		</section>
+		<footer>
+			
+		</footer>
+	</div>	
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery.svginject.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript">
+		$('.svg-inject').svgInject();
+		$(document).ready(function() {
+			function loopDown(clase, top, topu){
+		        $("." + clase).animate({
+		            marginTop : top//150
+		            },
+		            1500, function() {
+		            loopUp(clase, top, topu);
+		        });
+		    }
+		    function loopUp(clase, top, topu){
+		        $("." + clase).animate({
+		            marginTop : topu//-30
+		            },
+		            1500, function() {
+		            loopDown(clase, top, topu)
+		        });
+		    }
+
+			loopDown('tarjeta', 150, -30);
+			loopDown('flecha', 140, 110)
+
+			$('img.tarjeta').click(function(event) {
+				
+					window.location.href = 'pin.html';
+				
+			});
+			function animar()
+			{
+				if ($('.tarjeta').hasClass('looping')) {
+						$('.tarjeta').removeClass('looping');
+				} else {
+					$('.tarjeta').addClass('looping');
+				}
+			}
+			setInterval(animar, 10000);
+		});
+
+		insertar_documento();
+
+		$('.btn_terminar').click(function(event) {
+			
+			$('#incarnet').val('');
+			$('#indni').val('');
+		});
+
+		$('.btn_go').click(function(event) {
+				if ( $('#incarnet').val().length == 8 || $('#incarnet').val().length == 12 ) {
+
+					window.location.href = 'tarjeta.html';
+				}
+			});
+
+
+	</script>
+</body>
+</html>

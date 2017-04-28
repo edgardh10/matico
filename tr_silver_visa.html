@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ripleymatico</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+</head>
+<body>
+
+	<div class="contenedor">
+		<header>			
+			<div class="logo"><h1>Ripley<span class="logo_negrita">Mático</span></h1></div>	
+			<nav>
+				<ul>
+					<li class="menu_ripley"><a href="./"><img src="img/svg/casa.svg" class="svg-inject" alt="flechas" width="100" /></a></li>
+					<li class="menu_ripley menu_activo"><a href="tasasytarifas.html">Tasas <br>y Tarifas</a></li>
+					<li class="menu_ripley"><a href="#">Red de Agencias</a></li>
+					<li class="menu_ripley"><a href="productos.html">Productos</a></li>
+					<li class="menu_ripley"><a href="#">Gift Card</a></li>
+					<li class="menu_ripley"><a href="#">Beneficios</a></li>
+					<li class="menu_ripley"><a href="#">Simulador</a></li>
+					<li id="pin" class="menu_ripley"><a href="#">Crear PIN</a></li>
+				</ul>				
+			</nav>		
+		</header>
+		<section>
+			<div class="main_content">				
+				<div class="tipo_tarjeta_mini">
+					<form action="">
+						<label id="trc">
+						  <input type="radio" name="tarjeta" value="small" />
+						  <img src="img/ripley-simple.png" width="100">
+						</label>
+						<label id="trsm">
+						  <input type="radio" name="tarjeta" value="small" />
+						  <img src="img/ripley_mastercard.png" width="100">
+						</label>
+						<label id="trsp">
+						  <input type="radio" name="tarjeta" value="small" />
+						  <img src="img/ripley-visa-azul.png" width="100">
+						</label>
+						<label id="trgm">
+						  <input type="radio" name="tarjeta" value="small" />
+						  <img src="img/ripley_mastercard_amarillo.png" width="100">
+						</label>
+						<label id="trsv" class="tr_active">
+						  <input type="radio" name="tarjeta" value="small" />
+						  <img src="img/ripley-visa-plomo.png" width="100">
+						</label>
+
+					</form>
+					<div style="clear: both;"></div>
+				</div>
+				<div class="tasas_tarjetas">
+					<table class="tasas_tarifas">
+						<tr>
+							<td class="table_fondo" colspan="3">TASA DE INTERÉS EFECTIVA ANUAL</td>
+						</tr>
+						<tr>
+							<td class="table_left" rowspan="2">Por tipo de financiamiento</td>
+							<td class="table_fondo" colspan="2">TEA</td>							
+						</tr>
+						<tr class="tr_border">
+							<td class="table_fondo">Máximo</td>
+							<td class="table_fondo">Mínimo</td>							
+						</tr>
+						<tr>
+							<td class="table_left">Al contado hasta 45 días</td>
+							<td colspan="2">Sin intereses</td>							
+						</tr>
+						<tr>
+							<td class="table_left">En Cuotas</td>
+							<td>18.72%</td>
+							<td>56.38%</td>
+						</tr>
+						<tr>
+							<td class="table_left">En Cuotas definidas</td>
+							<td>18.72%</td>
+							<td>56.38%</td>
+						</tr>
+						<tr>
+							<td class="table_left">Pago mínimo/ full Sistema Renvolvente</td>
+							<td>18.72%</td>
+							<td>56.38%</td>
+						</tr>
+						<tr>
+							<td class="table_left">Media Cuota</td>
+							<td>18.72%</td>
+							<td>56.38%</td>
+						</tr>
+						<tr>
+							<td class="table_left">Pago cero</td>
+							<td>18.72%</td>
+							<td>56.38%</td>
+						</tr>
+					</table>
+					<div class="m20"></div>
+					<table class="tasas_tarifas">
+						
+						<tr>
+							<td class="table_left" rowspan="2">Por lugares de compra - En Cuotas</td>
+							<td class="table_fondo" colspan="2">TEA</td>							
+						</tr>
+						<tr class="tr_border">
+							<td class="table_fondo">Máximo</td>
+							<td class="table_fondo">Mínimo</td>							
+						</tr>
+						<tr>
+							<td class="table_left">Tiendas Ripley / Max(2) 2 a 36 cuotas</td>
+							<td colspan="2">Sin intereses</td>							
+						</tr>
+						<tr>
+							<td class="table_left">Mercadería en general</td>
+							<td>18.72%</td>
+							<td>56.38%</td>
+						</tr>
+						<tr>
+							<td class="table_left">Electrodomésticos</td>
+							<td>18.72%</td>
+							<td>56.38%</td>
+						</tr>
+						<tr>
+							<td class="table_left">Establecimientos afiliados</td>
+							<td>18.72%</td>
+							<td>56.38%</td>
+						</tr>
+						<tr>
+							<td class="table_left">Súper Efectivos - Línea paralela(4)</td>
+							<td>18.72%</td>
+							<td>56.38%</td>
+						</tr>
+						<tr>
+							<td class="table_left">Efectivo Express</td>
+							<td>18.72%</td>
+							<td>56.38%</td>
+						</tr>
+					</table>
+					<div class="btn_actions">
+						<button class="btn btn_grey_live btns_group"> <i class="fa fa-print" aria-hidden="true"></i> Imprimir</button>
+					</div>
+				</div>
+			</div>			
+		</section>
+		<footer>
+			
+		</footer>
+	</div>
+	
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery.svginject.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript">
+		$('.svg-inject').svgInject();
+		$(document).ready(function() {		
+
+			$('#trc').click(function() {
+				window.location.href = 'tr_clasica.html';
+			});
+			$('#trsm').click(function() {
+				window.location.href = 'tr_silver.html';
+			});
+			$('#trsp').click(function() {
+				window.location.href = 'tr_premium.html';
+			});
+			$('#trgm').click(function() {
+				window.location.href = 'tr_gold.html';
+			});
+			$('#trsv').click(function() {
+				window.location.href = 'tr_silver_visa.html';
+			});
+		});
+
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ripleymatico</title>	
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+</head>
+<body>
+
+	<div class="contenedor">
+		<header>			
+			<div class="logo"><h1>Ripley<span class="logo_negrita">Mático</span></h1></div>	
+			<nav>
+				<ul>
+					<li class="menu_ripley"><a href="./"><img src="img/svg/casa.svg" class="svg-inject" alt="flechas" width="100" /></a></li>
+					<li class="menu_ripley"><a href="tasasytarifas.html">Tasas <br>y Tarifas</a></li>
+					<li class="menu_ripley"><a href="#">Red de Agencias</a></li>
+					<li class="menu_ripley"><a href="productos.html">Productos</a></li>
+					<li class="menu_ripley"><a href="#">Gift Card</a></li>
+					<li class="menu_ripley"><a href="#">Beneficios</a></li>
+					<li class="menu_ripley"><a href="#">Simulador</a></li>
+					<li id="pin" class="menu_ripley"><a href="#">Crear PIN</a></li>
+				</ul>
+				<div style="clear: both;"></div>				
+			</nav>		
+		</header>
+		<section>
+			<div class="main_content">				
+				<div class="contenedor_pin">
+					<div class="teclado teclado_pin">
+						<div class="numericos lado_forms_pin">
+							<div class="pin">
+								<div class="header_pin">
+									<h2 class="opt"> Pin</h2>
+								</div>
+								<div class="clearfix"></div>
+								<p>Ingresa tu clave de cuatro dígitos.</p>
+								<div class="m13"></div>
+							</div>										
+							<input id="inpin" type="password" class="input_doc pin_pass" name="documento_dni" value="">
+							<button class="btn btn_active btn_pin">Siguiente</button>
+						</div>
+						<div id="teclado_dni" class="numericos">
+							<div class="f_row">
+							<button class="btn btn-numerico insert_data" data="1">1</button>
+							<button class="btn btn-numerico insert_data" data="2">2</button>
+							<button class="btn btn-numerico insert_data" data="3">3</button>
+							</div>
+							<div class="f_row">
+							<button class="btn btn-numerico insert_data" data="4">4</button>
+							<button class="btn btn-numerico insert_data" data="5">5</button>
+							<button class="btn btn-numerico insert_data" data="6">6</button>
+							</div>
+							<div class="f_row">
+							<button class="btn btn-numerico insert_data" data="7">7</button>
+							<button class="btn btn-numerico insert_data" data="8">8</button>
+							<button class="btn btn-numerico insert_data" data="9">9</button>
+							</div>
+							<div class="f_row">
+								<button class="btn btn-cero insert_data" data="0">0</button>
+								<button class="btn btn-numerico btn_back" ><img src="img/svg/back2.svg" class="svg-inject" alt="flechas" width="30" height="30" /></button>
+							</div>										
+						</div>
+					</div>
+				</div>
+			</div>			
+		</section>
+		<footer>
+			
+		</footer>
+	</div>	
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery.svginject.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript">
+		$('.svg-inject').svgInject();
+		
+		$(document).ready(function() {
+
+			function insertar_pin()
+			{
+				var pin_input = $('#inpin');
+
+				$('.insert_data').click(function() {
+					var valor = $(this).attr('data');
+					if (pin_input.val().length <= 3) {
+					var input = pin_input.val(pin_input.val() + valor);
+					}					
+				});
+				$('.btn_back').click(function() {
+					pin_input.val(pin_input.val().slice(0, -1));
+				});
+			}
+			insertar_pin();
+
+			$('.btn_pin').click(function() {
+				if ($('#inpin').val().length == 4) {
+					window.location.href = 'bienvenido.html';
+				}
+			});
+		});
+	</script>
+</body>
+</html>

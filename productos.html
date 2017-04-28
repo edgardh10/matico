@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ripleymatico</title>
+	<link rel="stylesheet" type="text/css" href="css/slick.css">
+	<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+</head>
+<body>
+
+	<div class="contenedor">
+		<header>
+			<div class="logo"><h1>Ripley<span class="logo_negrita">Mático</span></h1></div>
+			<nav>
+				<ul>
+					<li class="menu_ripley"><a href="./"><img src="img/svg/casa.svg" class="svg-inject" alt="flechas" width="100" /></a></li>
+					<li class="menu_ripley"><a href="tasasytarifas.html">Tasas <br>y Tarifas</a></li>
+					<li class="menu_ripley"><a href="#">Red de Agencias</a></li>
+					<li class="menu_ripley menu_activo"><a href="productos.html">Productos</a></li>
+					<li class="menu_ripley"><a href="#">Gift Card</a></li>
+					<li class="menu_ripley"><a href="#">Beneficios</a></li>
+					<li class="menu_ripley"><a href="#">Simulador</a></li>
+					<li id="pin" class="menu_ripley"><a href="#">Crear PIN</a></li>
+				</ul>				
+			</nav>		
+		</header>
+		<section>
+			<div class="main_content">				
+				<div class="pasa_sliders">
+					<div class="table">
+						<div class="centrar">
+							<section class="regular slider">
+							    <div>
+							      <img src="img/productos1.png">
+							    </div>
+							    <div>
+							      <img src="img/productos2.png">
+							    </div>							    
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</section>
+		<footer>
+			
+		</footer>
+	</div>
+	
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script src="js/slick.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery.svginject.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript">
+		$('.svg-inject').svgInject();
+		
+		$(document).ready(function() {
+			$(".regular").slick({
+		        /*dots: true,*/
+		        infinite: true,
+		        autoplay: true,
+  				autoplaySpeed: 2000
+		    });
+
+		    //$('.menu_ripley').addClass('atenuante');
+		});
+
+
+
+
+	</script>
+</body>
+</html>
