@@ -622,5 +622,32 @@ table.tasas_tarifas tr.tr_border{
 .home-icon{fill:none;stroke:#BCB8B8;stroke-width:12px;stroke-miterlimit:10;}
 .back-icon{fill:#7F7D7D;}
 
+/* estilos pop up */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+}
 
-
+.popup{
+    position: fixed;
+    left: 30%;
+    top: 200px;
+    z-index: 9999;
+    background: #fff;
+    width: 40%;
+    height: 300px;
+}
+.contenido_popup .close{
+    position: absolute;
+    right: -30px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 40px;
+    top: -10px;
+}
