@@ -162,12 +162,13 @@ background: rgb(77,77,77);
     width: 108px;
 }
 .numericos{
-	width: 40%;
+	width: 170px;
     float: left;
 }
 .documentos{
-    width: 40%;
+    width: 220px;
     float: left;
+    margin-right: 15px;
     }
 .teclado{
 	margin-top: 40px;
@@ -231,7 +232,7 @@ background: #9f74a1;}
 	margin:20px 0;
 }
 .header_pin, .pin{text-align: left;}
-.lado_forms_pin{text-align: left; }
+.lado_forms_pin{text-align: left;margin-right: 15px;width: 200px; }
 .pin_pass {
     padding: 10px 0;
     text-align: center;
@@ -239,11 +240,12 @@ background: #9f74a1;}
 }
 .btn_pin {
     width: 100%;
-    padding: 14px 0;
+    padding: 14px 0;    
 }
 .teclado_pin {
-    margin-top: 140px;
-    margin-left: 268px;
+    margin: 0 auto;
+    width: 385px;
+    padding-top: 120px;
 }
 .teclado_ultimo_tarjeta{
     padding: 100px 0;
@@ -641,8 +643,35 @@ table.tasas_tarifas tr.tr_border{
     z-index: 9999;
     background: #fff;
     width: 40%;
-    height: 300px;
+    //height: 300px;
 }
+.contenido_popup{
+    padding: 40px;
+}
+.popup_main {
+    width: 309px;
+    float: left;
+    margin-right: 20px;
+}
+.popup_main h2{
+    font-size: 22px;
+    text-transform: uppercase;
+}
+.popup_main p{
+    font-size: 16px;
+    margin-top: 15px;
+    padding-right: 38px;
+}
+.pop_gif {
+    width: 130px;
+    float: left;
+    text-align: center;
+}
+.pop_gif .gif{
+    transform: rotate(-90deg);
+    margin: 20px 0;
+}
+
 .contenido_popup .close{
     position: absolute;
     right: -30px;
@@ -650,4 +679,33 @@ table.tasas_tarifas tr.tr_border{
     color: #ffffff;
     font-size: 40px;
     top: -10px;
+}
+.huella_identifier{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 180px;
+}
+.huella_identifier p{
+    font-size: 30px;
+    color:#8a8a8a;    
+}
+.btn_pop{text-decoration: none;}
+.generar_pin{
+    width: 405px;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+.generar_pin p{
+    font-size: 16px;
+    padding: 5.8px 0;
+}
+.generar_pin h2{
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+.pin_exito{
+    text-align: center;
+    padding: 70px 0;
 }

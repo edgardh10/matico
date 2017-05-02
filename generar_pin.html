@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ripleymatico</title>	
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+</head>
+<body>
+
+	<div class="contenedor">
+		<header>			
+			<div class="logo"><h1>Ripley<span class="logo_negrita">Mático</span></h1></div>	
+			<nav>
+				<ul>
+					<li class="menu_ripley"><a href="./"><img src="img/svg/casa.svg" class="svg-inject" alt="flechas" width="100" /></a></li>
+					<li class="menu_ripley"><a href="tasasytarifas.html">Tasas <br>y Tarifas</a></li>
+					<li class="menu_ripley"><a href="#">Red de Agencias</a></li>
+					<li class="menu_ripley"><a href="productos.html">Productos</a></li>
+					<li class="menu_ripley"><a href="#">Gift Card</a></li>
+					<li class="menu_ripley"><a href="#">Beneficios</a></li>
+					<li class="menu_ripley"><a href="#">Simulador</a></li>
+					<li class="menu_ripley"><a id="pin" href="#">Crear PIN</a></li>
+				</ul>
+				<div style="clear: both;"></div>				
+			</nav>		
+		</header>
+		<section>
+			<div class="main_content">				
+				<div class="generar_pin">
+					<h2>Genera tu Pin</h2>
+					<div>
+						<div class="documentos">							
+							<p>Ingresa 4 dígitos</p>
+							<input id="pin_gen" type="password" class="input_doc" name="documento_dni" value="">
+							<p>Confirma los 4 dígitos</p>
+							<input id="pin_gen_n" type="password" class="input_doc" name="documento_carnet" value="">
+							<button type="reset" class="btn btn_end btn_terminar">Cancelar</button>
+							<button id="generar" class="btn btn_end btn_go">Generar</button>
+						</div>
+						<div id="teclado_generar" class="numericos">
+							<div class="f_row">
+								<button class="btn btn-numerico insert_data" data="1">1</button>
+								<button class="btn btn-numerico insert_data" data="2">2</button>
+								<button class="btn btn-numerico insert_data" data="3">3</button>
+							</div>
+							<div class="f_row">
+								<button class="btn btn-numerico insert_data" data="4">4</button>
+								<button class="btn btn-numerico insert_data" data="5">5</button>
+								<button class="btn btn-numerico insert_data" data="6">6</button>
+							</div>
+							<div class="f_row">
+								<button class="btn btn-numerico insert_data" data="7">7</button>
+								<button class="btn btn-numerico insert_data" data="8">8</button>
+								<button class="btn btn-numerico insert_data" data="9">9</button>
+							</div>
+							<div class="f_row">
+								<button class="btn btn-cero insert_data" data="0">0</button>
+								<button class="btn btn-numerico btn_back" ><img src="img/svg/back2.svg" class="svg-inject" alt="flechas" width="30" height="30" /></button>
+
+							</div>										
+						</div>
+						<div id="teclado_confirmar" class="numericos" style="display: none;">
+							<div class="f_row">
+								<button class="btn btn-numerico conf_data" data="1">1</button>
+								<button class="btn btn-numerico conf_data" data="2">2</button>
+								<button class="btn btn-numerico conf_data" data="3">3</button>
+							</div>
+							<div class="f_row">
+								<button class="btn btn-numerico conf_data" data="4">4</button>
+								<button class="btn btn-numerico conf_data" data="5">5</button>
+								<button class="btn btn-numerico conf_data" data="6">6</button>
+							</div>
+							<div class="f_row">
+								<button class="btn btn-numerico conf_data" data="7">7</button>
+								<button class="btn btn-numerico conf_data" data="8">8</button>
+								<button class="btn btn-numerico conf_data" data="9">9</button>
+							</div>
+							<div class="f_row">
+								<button class="btn btn-cero conf_data" data="0">0</button>
+								<button class="btn btn-numerico btn_backs" ><img src="img/svg/back2.svg" class="svg-inject" alt="flechas" width="30" height="30" /></button>
+
+							</div>										
+						</div>
+					</div>
+					<div style="clear: both;"></div>
+				</div>
+			</div>				
+		</section>
+		<footer>
+			
+		</footer>
+	</div>
+	<div class="overlay">
+		<div class="popup">
+			<div class="contenido_popup">
+				<a class="close" href="#">&times;</a>
+				<div class="pin_exito">
+					<p>¡El PIN se ha creado con éxito!</p>
+					<p>&nbsp;</p>
+					<a href="./" class="btn btn_active btn_pop">Finalizar</a>
+				</div>
+				
+			</div>			
+		</div>
+	</div>	
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery.svginject.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript">
+		$('.svg-inject').svgInject();
+		$(document).ready(function() {
+
+		$('.btn_terminar').click(function(event) {
+			window.location.href = './';
+		});		
+
+		var pin_crear = $('#pin_gen');
+		var pin_confirmar = $('#pin_gen_n');
+
+		var teclado_generar = $('#teclado_generar');
+		var teclado_confirmar = $('#teclado_confirmar');
+
+
+		pin_crear.focus(function() {			
+			teclado_confirmar.hide();
+			teclado_generar.show();
+		});
+		pin_confirmar.focus(function() {
+			teclado_generar.hide();
+			teclado_confirmar.show();
+		});
+		
+		function crearPin(id, data, borrar)
+		{
+			$('.'+data).click(function() {
+				var valor = $(this).attr('data');
+				if (id.val().length <= 3) {
+				var input = id.val(id.val() + valor);
+				}
+				activate();
+				
+			});
+			$('.'+ borrar).click(function() {
+				id.val(id.val().slice(0, -1));
+				activate();
+			});			
+		}
+
+		crearPin(pin_crear, 'insert_data', 'btn_back');
+		crearPin(pin_confirmar, 'conf_data', 'btn_backs');
+
+		$('#generar').click(function() {
+			if ($( "#generar" ).hasClass( "btn_active" )) {
+				popupCrearPin('generar'); // popup crear PIN
+			}
+		});
+
+
+
+		function activate()
+		{
+			if (pin_crear.val() == pin_confirmar.val() && pin_crear.val().length == 4 && pin_confirmar.val().length == 4) {
+				$('.btn_go').addClass('btn_active');
+				} else {
+					$('.btn_go').removeClass('btn_active');
+				}
+		}
+
+		
+
+		
+		});
+
+	</script>
+</body>
+</html>

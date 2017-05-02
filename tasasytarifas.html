@@ -21,7 +21,7 @@
 					<li class="menu_ripley"><a href="#">Gift Card</a></li>
 					<li class="menu_ripley"><a href="#">Beneficios</a></li>
 					<li class="menu_ripley"><a href="#">Simulador</a></li>
-					<li id="pin" class="menu_ripley"><a href="#">Crear PIN</a></li>
+					<li class="menu_ripley"><a id="pin" href="#">Crear PIN</a></li>
 				</ul>				
 			</nav>		
 		</header>
@@ -76,13 +76,33 @@
 			
 		</footer>
 	</div>
-	
+	<div class="overlay">
+		<div class="popup">
+			<div class="contenido_popup">
+				<a class="close" href="#">&times;</a>
+				<div class="popup_main">
+				<div class="m20"></div>
+				<div class="m13"></div>
+				<h2>Identificate</h2>
+				<p>Por favor coloca tu dedo índice sobre el detector de huella digital para validar tus datos.</p>
+				</div>
+				<div class="pop_gif">
+					<img src="img/huella.gif" alt="">
+					<img class="gif" src="img/flecha.png" alt="" width="40">
+					<div style="clear: both;"></div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
 	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
 	<script type="text/javascript" src="js/jquery.svginject.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript">
 		$('.svg-inject').svgInject();
 		$(document).ready(function() {		
+
+			popupCrearPin('pin') // popup crear PIN
 
 			$('#trc').click(function() {
 				window.location.href = 'tr_clasica.html';

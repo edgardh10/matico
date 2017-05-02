@@ -61,3 +61,40 @@ function insertar_documento()
 		}
 	});
 }
+
+function popupCrearPin(id)
+{
+	$('#'+id).click(function() {
+		$('.overlay').fadeIn('slow', function() {
+			
+		});
+	});
+
+	$('.close').click(function(){
+		$('.overlay').fadeOut('slow');
+		$('.overlay').fadeOut('slow');
+		return false;
+	});
+
+	$('.contenido_popup .pop_gif').click(function() {
+		window.location.href = 'user_huella.html';
+	});
+
+}
+// funciones de animación izquierda / derecha
+function loopRight(clase, right, left){
+    $("." + clase).animate({
+        marginLeft : right
+        },
+        1000, function() {
+        loopLeft(clase, right, left);
+    });
+}
+function loopLeft(clase, right, left){
+    $("." + clase).animate({
+        marginLeft : left
+        },
+        1000, function() {
+        loopRight(clase, right, left)
+    });
+}

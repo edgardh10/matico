@@ -94,10 +94,17 @@
 	<div class="overlay">
 		<div class="popup">
 			<div class="contenido_popup">
-				<h2>Identificate</h2>
 				<a class="close" href="#">&times;</a>
 				<div class="popup_main">
-					Contenido del Pop Up
+				<div class="m20"></div>
+				<div class="m13"></div>
+				<h2>Identificate</h2>
+				<p>Por favor coloca tu dedo índice sobre el detector de huella digital para validar tus datos.</p>
+				</div>
+				<div class="pop_gif">
+					<img src="img/huella.gif" alt="">
+					<img class="gif" src="img/flecha.png" alt="" width="40">
+					<div style="clear: both;"></div>
 				</div>
 			</div>
 			
@@ -131,7 +138,7 @@
 
 			$('img.tarjeta').click(function(event) {
 				
-					window.location.href = 'pin.html';
+				window.location.href = 'pin.html';
 				
 			});
 			function animar()
@@ -142,36 +149,25 @@
 					$('.tarjeta').addClass('looping');
 				}
 			}
-			setInterval(animar, 10000);
-		});
+			setInterval(animar, 10000);		
 
-		insertar_documento();
+			insertar_documento();// ingreso de documento
+			popupCrearPin('pin') // popup crear PIN
 
-		$('.btn_terminar').click(function(event) {
-			
-			$('#incarnet').val('');
-			$('#indni').val('');
-		});
+			$('.btn_terminar').click(function(event) {
+				
+				$('#incarnet').val('');
+				$('#indni').val('');
+			});
 
-		$('.btn_go').click(function(event) {
+			$('.btn_go').click(function(event) {
 				if ( $('#incarnet').val().length == 8 || $('#incarnet').val().length == 12 ) {
 
 					window.location.href = 'tarjeta.html';
 				}
 			});
-
-		$('a#pin').click(function() {
-			$('.overlay').fadeIn('slow', function() {
-				
-			});
 		});
-
-		$('.close').click(function(){
-		$('.overlay').fadeOut('slow');
-		$('.overlay').fadeOut('slow');
-		return false;
-	});
-
+		
 
 	</script>
 </body>
