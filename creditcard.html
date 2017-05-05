@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Ripleymatico</title>
+	<title>Ripleymatico</title>	
+	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
@@ -10,69 +11,103 @@
 <body>
 
 	<div class="contenedor">
-		<header>
-			<div class="usuario"><a href="./"><i class="fa fa-home casa_inicio" aria-hidden="true"></i> </a> BIENVENIDO(A) | <span class="nombre">CLAUDIA ELENA</span> </div>
+		<header>			
 			<div class="logo"><h1>Ripley<span class="logo_negrita">Mático</span></h1></div>	
 			<nav>
 				<ul>
-					<li class="menu_ripley"><a href="tasasytarifas.html">Tasas y Tarifas</a></li>
-					<li class="menu_ripley"><a href="#">Red de Agencias</a></li>
+					<li class="menu_ripley"><a href="./"><img src="img/svg/casa.svg" class="svg-inject" alt="flechas" width="100" /></a></li>
+					<li class="menu_ripley"><a href="tasasytarifas.html">Tasas <br>y Tarifas</a></li>
+					<li class="menu_ripley"><a href="red_agencias.html">Red de Agencias</a></li>
 					<li class="menu_ripley"><a href="productos.html">Productos</a></li>
 					<li class="menu_ripley"><a href="#">Gift Card</a></li>
 					<li class="menu_ripley"><a href="#">Beneficios</a></li>
 					<li class="menu_ripley"><a href="#">Simulador</a></li>
-					<li class="menu_ripley menu_active"><a href="#">Consultas</a></li>
+					<li class="menu_ripley"><a id="pin" href="#">Crear PIN</a></li>
 				</ul>
-			</nav>
+				<div style="clear: both;"></div>				
+			</nav>		
 		</header>
 		<section>
 			<div class="main_content">				
-				<div class="pasa_tarjeta">
-					<div class="table">
-						<div class="centrar">
-							<div class="m10"></div>
-							<div class="botones">
-								<a href="saldos.html"><button class="btn btn_backend back_active">Saldos</button></a>
+				<div class="breadcrum">
+					<div>
+						<ul>
+							<li><a href="bienvenido.html">Consultas</a></li>
+							<li><i class="fa fa-angle-right" aria-hidden="true"></i> Tarjeta de Crédito</li>
+						</ul>
+						<div style="clear: both;"></div>
+					</div>
+					<h2 class="usuario_r">Hola, Claudia Elena</h2>
+				</div>
+				<div class="m70"></div>
+				<div class="contenido_backend">
+					<div class="master">
+						<div class="tarjeta_credito">
+							<div class="user_back">
+								<a href="saldos.html">
+								<div class="icon-content">
+								<img class="svg-inject" src="img/svg/money.svg" alt="" width="100" height="70">
+								</div>
+								<p>Saldos</p>
+								</a>
 							</div>
-							<div class="botones">
-								<a href="movimientos.html"><button class="btn btn_backend back_active">Movimientos</button></a>
+							<div class="user_back">
+								<a href="movimientos.html">
+								<div class="icon-content">
+								<img class="svg-inject" src="img/svg/flechas.svg" alt="" width="100" height="70">
+								</div>
+								<p>Movimientos</p>
+								</a>
 							</div>
-							<div class="botones">
-								<a href="estado_cuenta.html"><button class="btn btn_backend back_active">Resumen de estado de cuenta</button></a>
+							<div class="user_back">
+								<a href="estado_cuenta.html">
+								<div class="icon-content">
+								<img class="svg-inject" src="img/svg/lpiz.svg" alt="" width="100" height="70">
+								</div>
+								<p>Resumen estado<br>de cuenta</p>
+								</a>
 							</div>
-						</div>
+							<div style="clear: both;"></div>
+						</div>						
 					</div>
 				</div>
-			</div>			
+			</div>				
 		</section>
 		<footer>
-			<div class="m17"></div>
-			<div class="btn_print">
-				<button id="backLink" class="btn btn_grey_live btns_group"> <i class="fa fa-chevron-left" aria-hidden="true"></i> Atras</button>			
-				<a href="./"><button class="btn btn_grey_live btns_group"> <i class="fa fa-times" aria-hidden="true"></i> Salir</button></a>
-			</div>
+			
 		</footer>
 	</div>
-	
-	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
-	<script type="text/javascript">
-		
-		$(document).ready(function() {
+	<div class="overlay">
+		<div class="popup">
+			<div class="contenido_popup">
+				<a class="close" href="#">&times;</a>
+				<div class="popup_main">
+				<div class="m20"></div>
+				<div class="m13"></div>
+				<h2>Identificate</h2>
+				<p>Por favor coloca tu dedo índice sobre el detector de huella digital para validar tus datos.</p>
+				</div>
+				<div class="pop_gif">
+					<img src="img/huella.gif" alt="">
+					<img class="gif" src="img/flecha.png" alt="" width="40">
+					<div style="clear: both;"></div>
+				</div>
+			</div>
 			
-			$('.menu_ripley').hide();
-			$('.menu_active').show();
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery.svginject.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript">
+		$('.svg-inject').svgInject();
+		$(document).ready(function() {
 
-			$("#backLink").click(function() {
-			    //event.preventDefault();
-			    history.back();
-			});
 
+		popupCrearPin('pin') // popup crear PIN
 
+		
 		});
-
-
-
-
 	</script>
 </body>
 </html>

@@ -98,3 +98,7 @@ function loopLeft(clase, right, left){
         loopRight(clase, right, left)
     });
 }
+
+$("#backLink").click(function() {
+    history.back();
+});
