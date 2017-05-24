@@ -12,19 +12,21 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 </head>
 <body>
-
+	<div id="hightlight-content" class="hightlight-content" style="height: 768px;">
+		<canvas id="demo-canvas" width="1024" height="768"></canvas>		
+	</div>
 	<div class="contenedor">
 		<header>			
 			<div class="logo"><h1>Ripley<span class="logo_negrita">Mático</span></h1></div>	
 			<nav>
 				<ul>
-					<li class="menu_ripley"><a href="./"><img src="img/svg/casa.svg" class="svg-inject" alt="flechas" width="100" /></a></li>
+					<li class="menu_ripley"><a href="./"><img src="img/svg/casa.svg" class="svg-inject" alt="flechas" width="40" /></a></li>
 					<li class="menu_ripley"><a href="tasasytarifas.html">Tasas <br>y Tarifas</a></li>
 					<li class="menu_ripley menu_activo"><a href="red_agencias.html">Red de Agencias</a></li>
 					<li class="menu_ripley"><a href="productos.html">Productos</a></li>
 					<li class="menu_ripley"><a href="#">Gift Card</a></li>
 					<li class="menu_ripley"><a href="#">Beneficios</a></li>
-					<li class="menu_ripley"><a href="#">Simulador</a></li>
+					<li class="menu_ripley"><a href="simulador.html">Simulador</a></li>
 					<li class="menu_ripley"><a id="pin" href="#">Crear PIN</a></li>
 				</ul>
 				<div style="clear: both;"></div>				
@@ -58,7 +60,9 @@
 					<p><strong>Horarios de atención:</strong></p>
 					<p>Lunes a Sabado: <?= $_GET['lv'] ?></p>
 					<p>Domingos: <?= $_GET['d'] ?></p>
+					<button  id="backLink" class="btn btn_grey_live btns_group maplink"> <i class="fa fa-chevron-left" aria-hidden="true"></i> Atras</button>
 				</div>
+				
 				</div>
 				<div style="clear: both;"></div>
 			</div>				
@@ -89,6 +93,11 @@
 	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
 	<script type="text/javascript" src="js/jquery.svginject.js"></script>
 	<script type="text/javascript" src="js/unslider-min.js"></script>
+
+	<script type="text/javascript" src="js/TweenLite.min.js"></script>
+	<script type="text/javascript" src="js/EasePack.min.js"></script>
+	<script type="text/javascript" src="js/canvas.js"></script>	
+
 	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript">
 		$('.svg-inject').svgInject();
@@ -98,7 +107,7 @@
           center: {lat: <?= $_GET['lat'] ?>, lng: <?= $_GET['lng'] ?>},
           zoom: 16,
           //mapTypeControl: false,
-          disableDefaultUI: false,
+          disableDefaultUI: true,
           zoomControl: false,
           //scaleControl: false,
           fullscreenControl: true,

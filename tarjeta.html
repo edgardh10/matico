@@ -3,24 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Ripleymatico</title>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">	
 	<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 </head>
 <body>
-
+	<div id="hightlight-content" class="hightlight-content" style="height: 768px;">
+		<canvas id="demo-canvas" width="1024" height="768"></canvas>		
+	</div>
 	<div class="contenedor">
 		<header>			
 			<div class="logo"><h1>Ripley<span class="logo_negrita">Mático</span></h1></div>	
 			<nav>
 				<ul>
-					<li class="menu_ripley"><a href="./"><img src="img/svg/casa.svg" class="svg-inject" alt="flechas" width="100" /></a></li>
+					<li class="menu_ripley"><a href="./"><img src="img/svg/casa.svg" class="svg-inject" alt="flechas" width="40" /></a></li>
 					<li class="menu_ripley"><a href="tasasytarifas.html">Tasas <br>y Tarifas</a></li>
 					<li class="menu_ripley"><a href="red_agencias.html">Red de Agencias</a></li>
 					<li class="menu_ripley"><a href="productos.html">Productos</a></li>
 					<li class="menu_ripley"><a href="#">Gift Card</a></li>
 					<li class="menu_ripley"><a href="#">Beneficios</a></li>
-					<li class="menu_ripley"><a href="#">Simulador</a></li>
+					<li class="menu_ripley"><a href="simulador.html">Simulador</a></li>
 					<li id="pin" class="menu_ripley"><a href="#">Crear PIN</a></li>
 				</ul>				
 			</nav>		
@@ -40,27 +43,27 @@
 									<form action="">
 										<label>
 										  <input type="radio" name="tarjeta" value="small" />
-										  <img src="img/ripley-simple.png">
+										  <img src="img/tarjetas/ripley_clasica.png">
 										  <p class="tarjeas_des">Tarjeta ripley<br> Clásica</p>
 										</label>
 										<label>
 										  <input type="radio" name="tarjeta" value="small" />
-										  <img src="img/ripley_mastercard.png">
+										  <img src="img/tarjetas/mc_silver.jpg">
 										  <p class="tarjeas_des">Tarjeta ripley<br> Silver Mastercard</p>
 										</label>
 										<label>
 										  <input type="radio" name="tarjeta" value="small" />
-										  <img src="img/ripley-visa-azul.png">
+										  <img src="img/tarjetas/v_silver.jpg">
 										  <p class="tarjeas_des">Tarjeta ripley<br> Silver Premium</p>
 										</label>
 										<label>
 										  <input type="radio" name="tarjeta" value="small" />
-										  <img src="img/ripley_mastercard_amarillo.png">
+										  <img src="img/tarjetas/mc_gold.jpg">
 										  <p class="tarjeas_des">Tarjeta ripley<br> Gold Mastercard</p>
 										</label>
 										<label>
 										  <input type="radio" name="tarjeta" value="small" />
-										  <img src="img/ripley-visa-plomo.png">
+										  <img src="img/tarjetas/v_platinum.jpg">
 										  <p class="tarjeas_des">Tarjeta ripley<br> Silver Visa</p>
 										</label>
 
@@ -76,30 +79,38 @@
 			
 		</footer>
 	</div>
-	
+	<div class="overlay">
+		<div class="popup">
+			<div class="contenido_popup">
+				<a class="close" href="#">&times;</a>
+				<div class="popup_main">
+				<div class="m20"></div>
+				<div class="m13"></div>
+				<h2>Identificate</h2>
+				<p>Por favor coloca tu dedo índice sobre el detector de huella digital para validar tus datos.</p>
+				</div>
+				<div class="pop_gif">
+					<img src="img/huella.gif" alt="">
+					<img class="gif" src="img/flecha.png" alt="" width="40">
+					<div style="clear: both;"></div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
 	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
 	<script type="text/javascript" src="js/jquery.svginject.js"></script>
+
+	<script type="text/javascript" src="js/TweenLite.min.js"></script>
+	<script type="text/javascript" src="js/EasePack.min.js"></script>
+	<script type="text/javascript" src="js/canvas.js"></script>	
+
 	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript">
 		$('.svg-inject').svgInject();
 		$(document).ready(function() {
-			function loopDown(){
-		        $(".tarjeta").animate({
-		            marginTop : 150
-		            },
-		            1500, function() {
-		            loopUp();
-		        });
-		    }
-		    function loopUp(){
-		        $(".tarjeta").animate({
-		            marginTop : -30
-		            },
-		            1500, function() {
-		            loopDown();
-		        });
-		    }
-			loopDown();
+			
+			popupCrearPin('pin')
 
 			$('label').click(function(event) {
 				window.location.href = 'ul_4_tarjeta.html';

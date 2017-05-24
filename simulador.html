@@ -23,7 +23,7 @@
 					<li class="menu_ripley"><a href="productos.html">Productos</a></li>
 					<li class="menu_ripley"><a href="#">Gift Card</a></li>
 					<li class="menu_ripley"><a href="#">Beneficios</a></li>
-					<li class="menu_ripley"><a href="simulador.html">Simulador</a></li>
+					<li class="menu_ripley menu_activo"><a href="simulador.html">Simulador</a></li>
 					<li class="menu_ripley"><a id="pin" href="#">Crear PIN</a></li>
 				</ul>
 				<div style="clear: both;"></div>				
@@ -31,17 +31,44 @@
 		</header>
 		<section>
 			<div class="main_content">				
-				<div class="generar_pin">
-					<h2>Genera tu Pin</h2>
+				<div class="breadcrum">
 					<div>
-						<div class="documentos">							
-							<p>Ingresa 4 dígitos</p>
-							<input id="pin_gen" type="password" class="input_doc" name="documento_dni" value="">
-							<p>Confirma los 4 dígitos</p>
-							<input id="pin_gen_n" type="password" class="input_doc" name="documento_carnet" value="">
-							<button type="reset" class="btn btn_end btn_terminar">Cancelar</button>
-							<button id="generar" class="btn btn_end btn_go">Generar</button>
+						<ul>
+							<li><a href="simulador.html">Simulador</a></li>
+							<li><i class="fa fa-angle-right" aria-hidden="true"></i> Efectivo Express</li>
+						</ul>
+						<div style="clear: both;"></div>
+					</div>
+				</div>
+				<div class="m25"></div>
+				<div class="content_simulador">
+					<h2>Efectivo Express</h2>					
+					<div class="inf_fecha"><p class="small">Fecha: 21/03/2017 - 11:45 a.m.</p></div>
+					<div class="simular">
+						<div class="labels_sim">
+							<div class="lb">
+								<p>Tarjeta</p>
+								<p>Opción de compra</p>
+								<p>Monto</p>
+								<p>Número de cuotas</p>
+								<p>Cuota</p>
+								<p>Interés</p>
+								<p>TEA</p>
+								<p>TREA</p>
+							</div>
+							<div class="inp">
+								<button class="btn btn_sim btn_color">Seleccionar</button>
+								<div><button class="btn btn_sim btn_left">Cuotas</button><button class="btn btn_sim btn_right">Revolventes</button></div>
+								<input type="text">
+								<input type="text">
+								<input type="text">
+								<input type="text">
+								<input type="text">
+								<input type="text">
+							</div>							
+							
 						</div>
+						<div>
 						<div id="teclado_generar" class="numericos">
 							<div class="f_row">
 								<button class="btn btn-numerico insert_data" data="1">1</button>
@@ -88,26 +115,37 @@
 						</div>
 					</div>
 					<div style="clear: both;"></div>
+					</div>
 				</div>
 			</div>				
 		</section>
 		<footer>
-			
+			<div class="btn_print">
+				<button  id="simular" class="btn btn_grey_live btns_group"> <i class="fa fa-chevron-left" aria-hidden="true"></i> Simular Ahora</button>
+				<button class="btn btn_grey_live btns_group"> <i class="fa fa-print" aria-hidden="true"></i> Imprimir</button>
+				<a href="./"><button class="btn btn_grey_live btns_group"> <i class="fa fa-times" aria-hidden="true"></i> Salir</button></a>
+			</div>
 		</footer>
 	</div>
 	<div class="overlay">
 		<div class="popup">
 			<div class="contenido_popup">
 				<a class="close" href="#">&times;</a>
-				<div class="pin_exito">
-					<p>¡El PIN se ha creado con éxito!</p>
-					<p>&nbsp;</p>
-					<a href="./" class="btn btn_active btn_pop">Finalizar</a>
+				<div class="popup_main">
+				<div class="m20"></div>
+				<div class="m13"></div>
+				<h2>Identificate</h2>
+				<p>Por favor coloca tu dedo índice sobre el detector de huella digital para validar tus datos.</p>
 				</div>
-				
-			</div>			
+				<div class="pop_gif">
+					<img src="img/huella.gif" alt="">
+					<img class="gif" src="img/flecha.png" alt="" width="40">
+					<div style="clear: both;"></div>
+				</div>
+			</div>
+			
 		</div>
-	</div>	
+	</div>
 	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
 	<script type="text/javascript" src="js/jquery.svginject.js"></script>
 
@@ -120,66 +158,14 @@
 		$('.svg-inject').svgInject();
 		$(document).ready(function() {
 
-		$('.btn_terminar').click(function(event) {
-			window.location.href = './';
-		});		
 
-		var pin_crear = $('#pin_gen');
-		var pin_confirmar = $('#pin_gen_n');
-
-		var teclado_generar = $('#teclado_generar');
-		var teclado_confirmar = $('#teclado_confirmar');
-
-
-		pin_crear.focus(function() {			
-			teclado_confirmar.hide();
-			teclado_generar.show();
-		});
-		pin_confirmar.focus(function() {
-			teclado_generar.hide();
-			teclado_confirmar.show();
-		});
-		
-		function crearPin(id, data, borrar)
-		{
-			$('.'+data).click(function() {
-				var valor = $(this).attr('data');
-				if (id.val().length <= 3) {
-				var input = id.val(id.val() + valor);
-				}
-				activate();
-				
-			});
-			$('.'+ borrar).click(function() {
-				id.val(id.val().slice(0, -1));
-				activate();
-			});			
-		}
-
-		crearPin(pin_crear, 'insert_data', 'btn_back');
-		crearPin(pin_confirmar, 'conf_data', 'btn_backs');
-
-		$('#generar').click(function() {
-			if ($( "#generar" ).hasClass( "btn_active" )) {
-				popupCrearPin('generar'); // popup crear PIN
-			}
-		});
-
-
-
-		function activate()
-		{
-			if (pin_crear.val() == pin_confirmar.val() && pin_crear.val().length == 4 && pin_confirmar.val().length == 4) {
-				$('.btn_go').addClass('btn_active');
-				} else {
-					$('.btn_go').removeClass('btn_active');
-				}
-		}
-
-		
-
+			popupCrearPin('pin') // popup crear PIN
+			
+			fechaActual('small');
 		
 		});
+		
+		//loopRight('gif', 90, 0)
 
 	</script>
 </body>
