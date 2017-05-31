@@ -137,57 +137,57 @@ function animaciones()
 {
 	// index
 	
-	$('nav ul li.menu_ripley').addClass('animated flipInX');
-	$('.logo').addClass('animated bounceInLeft')
+	$('nav ul li.menu_ripley').addClass('animated fadeIn');
+	$('.logo').addClass('animated fadeIn')
 	// 
-	$('#swing').addClass('animated swing')
-	$('#fadeinleft').addClass('animated fadeInLeft');
-	$('#fadeinright').addClass('animated fadeInRight');
+	$('#swing').addClass('animated fadeIn')
+	$('#fadeinleft').addClass('animated fadeIn');
+	$('#fadeinright').addClass('animated fadeIn');
 
 	// Tarjetas	
-	$('.tipo_tarjeta label:nth-child(2n+1)').addClass('animated fadeInDown');
-	$('.tipo_tarjeta label:nth-child(2n)').addClass('animated fadeInUp');
+	$('.tipo_tarjeta label:nth-child(2n+1)').addClass('animated fadeIn');
+	$('.tipo_tarjeta label:nth-child(2n)').addClass('animated fadeIn');
 	//cuatro ultimos digitos
-	$('.teclado_ultimo_tarjeta .numericos').addClass('animated flipInY');
-	$('.teclado_ultimo_tarjeta .num_tarjeta').addClass('animated zoomInLeft');
+	$('.teclado_ultimo_tarjeta .numericos').addClass('animated fadeIn');
+	$('.teclado_ultimo_tarjeta .num_tarjeta').addClass('animated fadeIn');
 	//ingreso de Pin
-	$('.teclado_pin').addClass('animated wobble');
-	$('.content_simulador').addClass('animated rubberBand');
+	$('.teclado_pin').addClass('animated fadeIn');
+	$('.content_simulador').addClass('animated fadeIn');
 
-	$('.huella_identifier p').addClass('animated bounceInLeft');
-	$('.huella_identifier a').addClass('animated bounceInRight');
+	$('.huella_identifier p').addClass('animated fadeIn');
+	$('.huella_identifier a').addClass('animated fadeIn');
 
-	$('.mapa_ver').addClass('animated bounceInLeft');
-	$('.detalle_info').addClass('animated bounceInRight');
+	$('.mapa_ver').addClass('animated fadeIn');
+	$('.detalle_info').addClass('animated fadeIn');
 
-	$('.generar_pin').addClass('animated wobble');
-	$('.tasas_tarifas').addClass('animated wobble');
+	$('.generar_pin').addClass('animated fadeIn');
+	$('.tasas_tarifas').addClass('animated fadeIn');
 
-	$('.btn_actions').addClass('animated bounceIn');
+	$('.btn_actions').addClass('animated fadeIn');
 
 	//post login 
-	$('.breadcrum').addClass('animated shake');
-	$('.header_tar').addClass('animated shake');
-	$('.titulo_red').addClass('animated shake');
+	$('.breadcrum').addClass('animated fadeIn');
+	$('.header_tar').addClass('animated fadeIn');
+	$('.titulo_red').addClass('animated fadeIn');
 
-	$('.unslider ul li').addClass('animated tada');
+	$('.unslider ul li').addClass('animated fadeIn');
 	
-	$('.user_back:nth-child(1)').addClass('animated bounceInLeft');
-	$('.user_back:nth-child(2)').addClass('animated bounceInDown');
-	$('.user_back:nth-child(4)').addClass('animated bounceInUp');
-	$('.user_back:nth-child(3)').addClass('animated bounceInRight');
+	$('.user_back:nth-child(1)').addClass('animated fadeIn');
+	$('.user_back:nth-child(2)').addClass('animated fadeIn');
+	$('.user_back:nth-child(4)').addClass('animated fadeIn');
+	$('.user_back:nth-child(3)').addClass('animated fadeIn');
 
-	$('.back_information').addClass('animated rubberBand');
-	$('.btn_print').addClass('animated zoomInUp')
+	$('.back_information').addClass('animated fadeIn');
+	$('.btn_print').addClass('animated fadeIn')
 
 	function popin(id){
 		//ingreso pop up
 		$('#'+id).click(function() {
-			if ($('.popup').hasClass('animated rollOut')) {
+			if ($('.popup').hasClass('animated fadeIn')) {
 
-				$('.popup').removeClass('animated rollOut');			
+				$('.popup').removeClass('animated fadeIn');			
 				}
-			$('.popup').addClass('animated rollIn');
+			$('.popup').addClass('animated fadeIn');
 		});
 	}
 	
@@ -196,8 +196,8 @@ function animaciones()
 	popin('cambioPin');
 
 	$('.close').click(function() {
-		$('.popup').removeClass('animated rollIn');
-		$('.popup').addClass('animated rollOut');
+		$('.popup').removeClass('animated fadeIn');
+		$('.popup').addClass('animated fadeIn');
 	});
 }
 animaciones();

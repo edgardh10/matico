@@ -805,7 +805,6 @@ table.tasas_tarifas tr.tr_border{
     background: #cbcbcb;
     font-size: 12px;
     width: 312px;
-    margin-left: 40px;
     padding: 5px;
     color: #444;
     float: left;
@@ -813,7 +812,6 @@ table.tasas_tarifas tr.tr_border{
 }
 .btns_prints{
     float: right;
-    margin-right: 40px;
     margin-top: 10px;
     position: relative;
 }
@@ -984,3 +982,4 @@ input[placeholder]{
     margin: 6px 0;
 }
 #swing{width: 405px;}
+#demo-canvas{display: none;}
