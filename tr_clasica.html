@@ -52,7 +52,10 @@
 						  <input type="radio" name="tarjeta" value="small" />
 						  <img src="img/tarjetas/v_platinum.jpg">
 						</label>
-
+						<label id="trmb">
+						  <input type="radio" name="tarjeta" value="small" />
+						  <img src="img/tarjetas/t3.png">
+						</label>
 					</form>
 					<div style="clear: both;"></div>
 				</div>
@@ -139,9 +142,7 @@
 							<td>56.38%</td>
 						</tr>
 					</table>
-					<div class="btn_actions">
-						<button class="btn btn_grey_live btns_group"> <i class="fa fa-print" aria-hidden="true"></i> Imprimir</button>
-					</div>
+					
 				</div>
 			</div>			
 		</section>
@@ -196,6 +197,9 @@
 			});
 			$('#trsv').click(function() {
 				window.location.href = 'tr_silver_visa.html';
+			});
+			$('#trmb').click(function() {
+				window.location.href = 'tr_master_black.html';
 			});
 		});
 

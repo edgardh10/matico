@@ -169,11 +169,20 @@
 
 		function activate()
 		{
+			if (pin_confirmar.val().length == 4 && pin_confirmar.val() == pin_crear.val()) {
+				$('.documentos input').css('border', '1px solid green');
+			}
+
+			if (pin_confirmar.val().length == 4 && pin_confirmar.val() != pin_crear.val()) {				
+				$('.documentos input').css('border', '1px solid red');
+			}
 			if (pin_crear.val() == pin_confirmar.val() && pin_crear.val().length == 4 && pin_confirmar.val().length == 4) {
-				$('.btn_go').addClass('btn_active');
+					$('.btn_go').addClass('btn_active');
+					
 				} else {
 					$('.btn_go').removeClass('btn_active');
 				}
+			
 		}
 
 		

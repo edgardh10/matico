@@ -285,7 +285,10 @@ background: #9f74a1;}
 .m13{padding: 13px 0;}
 .m20{padding: 20px 0;}
 .m25{padding: 25px 0;}
-.m70{padding: 70px 0}
+.m30{padding: 30px 0;}
+.m35{padding: 35px 0;}
+.m40{padding: 40px 0;}
+.m70{padding: 70px 0;}
 .usuario{
     position: absolute;
     color: #8a8a8a;
@@ -443,13 +446,14 @@ table.tabla_um tr td:nth-child(3){
     margin: 0 auto;
 }
 .tipo_tarjeta {
-    margin: 120px 0;
+    margin: 0 auto;
     text-align: center;
+    width: 550px;
 }
 .tipo_tarjeta_mini {
     margin: 0 auto;
     text-align: center;
-    width: 700px;
+    width: 760px;
     margin-top: 40px;
 }
 .tipo_tarjeta label > input, .tipo_tarjeta_mini label > input {
@@ -461,7 +465,9 @@ table.tabla_um tr td:nth-child(3){
     border: 2px solid transparent;
     margin: 4px 14px;
 }
-
+.cont_tarjeta_user .tipo_tarjeta{
+    //width: 100%;
+}
 .slick-prev:before, .slick-next:before {
     color: #d7d6db;
     font-size: 50px;
@@ -619,7 +625,7 @@ table.tasas_tarifas{
     text-align: center;
     vertical-align: middle;
     margin: 0 auto;
-    margin-top: 15px;
+    margin-top: 30px;
     font-size: 16px;
     border: 2px solid #939393;
 }
@@ -983,3 +989,5 @@ input[placeholder]{
 }
 #swing{width: 405px;}
 #demo-canvas{display: none;}
+.cont_tarjeta_user{text-align: center;padding-top: 20px;}
+.cont_tarjeta_user

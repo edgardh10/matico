@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Ripleymatico</title>	
+	<title>Ripleymatico</title>
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style.css">	
 	<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 </head>
 <body>
@@ -24,19 +24,39 @@
 					<li class="menu_ripley"><a href="#">Gift Card</a></li>
 					<li class="menu_ripley"><a href="#">Beneficios</a></li>
 					<li class="menu_ripley"><a href="simulador.html">Simulador</a></li>
-					<li class="menu_ripley"><a id="pin" href="#">Crear PIN</a></li>
-				</ul>
-				<div style="clear: both;"></div>				
+					<li id="pin" class="menu_ripley"><a href="#">Crear PIN</a></li>
+				</ul>				
 			</nav>		
 		</header>
+		<dic class="clearfix"></dic>
 		<section>
 			<div class="main_content">				
-				<div class="huella_identifier">
-					<p>¡Hola <strong>Claudia Elena</strong>!</p>
-					<p>&nbsp;</p>
-					<a href="generar_pin.html" class="btn btn_active btn_pop">Generar PIN</a>
+				<div class="cont_tarjeta_user">
+					<div class="">
+						<div class="header_tar">
+							<h2 class="usuario_r">Hola, Claudia Elena</h2>
+							<h2> Selecciona una tarjeta</h2>
+						</div>
+					</div>
+					<div class="tipo_tarjeta">
+					<div class="m40"></div>
+						<form action="">
+							<label>
+							  <input type="radio" name="tarjeta" value="small" />
+							  <img src="img/tarjetas/ripley_clasica.png">
+							  <p class="tarjeas_des">Tarjeta ripley<br> Clásica</p>
+							</label>
+							<label>
+							  <input type="radio" name="tarjeta" value="small" />
+							  <img src="img/tarjetas/mc_silver.jpg">
+							  <p class="tarjeas_des">Tarjeta ripley<br> Silver Mastercard</p>
+							</label>									
+
+						</form>
+						<div style="clear: both;"></div>
+					</div>
 				</div>
-			</div>				
+			</div>			
 		</section>
 		<footer>
 			
@@ -72,12 +92,16 @@
 	<script type="text/javascript">
 		$('.svg-inject').svgInject();
 		$(document).ready(function() {
+			
+			popupCrearPin('pin')
 
-
-		//popupCrearPin() // popup crear PIN
-
-		
+			$('label').click(function(event) {
+				window.location.href = 'ul_4_tarjeta_pin.html';
+			});
 		});
+
+
+
 
 	</script>
 </body>
